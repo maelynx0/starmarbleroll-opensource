@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://c5rn156ahd8wn"]
+
+[ext_resource type="Texture2D" uid="uid://bopndk4ut26tp" path="res://media/sprites/ui/startlogo.png" id="1_cy0qo"]
+[ext_resource type="Texture2D" uid="uid://dv8ktygkg0etc" path="res://media/sprites/bg/bgstarrynight.png" id="1_osljp"]
+[ext_resource type="Texture2D" uid="uid://yap6lnx3gv3" path="res://media/sprites/ui/sparkbg.png" id="3_osljp"]
+[ext_resource type="Texture2D" uid="uid://dbfb6ot0m37b7" path="res://media/sprites/deco/starprojection.png" id="3_ux7pi"]
+[ext_resource type="Script" uid="uid://c1stwwo0tmc3d" path="res://scripts/uibehaviour/startmenu_bt.gd" id="4_ag814"]
+[ext_resource type="Texture2D" uid="uid://dccw0im0da7bp" path="res://media/sprites/ui/stuff_bt.png" id="5_osljp"]
+[ext_resource type="Texture2D" uid="uid://ctfc87cyd3tpw" path="res://media/sprites/ui/play_bt.png" id="6_7dpjk"]
+[ext_resource type="Texture2D" uid="uid://dxj36gqumv6dm" path="res://media/sprites/ui/others_bt.png" id="7_ux7pi"]
+[ext_resource type="Texture2D" uid="uid://brfobqmo3la7v" path="res://media/sprites/deco/alicestar.png" id="7_xqjhc"]
+
+[sub_resource type="Animation" id="Animation_0baed"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-129.54501, -240)]
+}
+
+[sub_resource type="Animation" id="Animation_ux7pi"]
+resource_name = "upanddown"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-129.54501, -240), Vector2(-129.545, -247.275), Vector2(-129.54501, -240)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xqjhc"]
+_data = {
+&"RESET": SubResource("Animation_0baed"),
+&"upanddown": SubResource("Animation_ux7pi")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0baed"]
+atlas = ExtResource("5_osljp")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xqjhc"]
+atlas = ExtResource("5_osljp")
+region = Rect2(513, 0, 255, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yt2ge"]
+atlas = ExtResource("5_osljp")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4yak4"]
+atlas = ExtResource("6_7dpjk")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isrmv"]
+atlas = ExtResource("6_7dpjk")
+region = Rect2(511.5792, -0.24102402, 256.26712, 256.29236)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jo3xk"]
+atlas = ExtResource("6_7dpjk")
+region = Rect2(255.63654, 0, 256.36377, 256)
+
+[sub_resource type="ImageTexture" id="ImageTexture_ag814"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hj22w"]
+atlas = ExtResource("7_ux7pi")
+region = Rect2(0, 0, 256.72717, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gn8yc"]
+atlas = ExtResource("7_ux7pi")
+region = Rect2(511.27277, 0, 256.72723, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ax2kl"]
+atlas = ExtResource("7_ux7pi")
+region = Rect2(255.81807, 0, 256.36383, 256)
+
+[node name="Menucontent" type="Control" unique_id=474657853]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+
+[node name="BG" type="TextureRect" parent="." unique_id=1403288992]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -352.0
+offset_top = -251.0
+offset_right = 353.0
+offset_bottom = 252.0
+texture = ExtResource("1_osljp")
+
+[node name="Deco" type="Sprite2D" parent="." unique_id=455026531]
+position = Vector2(0, -51)
+scale = Vector2(1.6875, 1)
+texture = ExtResource("3_osljp")
+
+[node name="Logo" type="TextureRect" parent="." unique_id=1665462955]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.36100003
+anchor_right = 0.36100003
+offset_left = -129.54501
+offset_top = -240.0
+offset_right = 388.455
+offset_bottom = 16.0
+grow_horizontal = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_cy0qo")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Logo" unique_id=83899663]
+libraries/ = SubResource("AnimationLibrary_xqjhc")
+autoplay = &"upanddown"
+
+[node name="Buttonslist" type="HBoxContainer" parent="." unique_id=547431391]
+layout_mode = 1
+anchors_preset = -1
+offset_left = -200.0
+offset_top = -105.0
+offset_right = 866.0
+offset_bottom = 151.0
+grow_vertical = 2
+scale = Vector2(0.4, 0.4)
+theme_override_constants/separation = 149
+script = ExtResource("4_ag814")
+
+[node name="Stuff" type="TextureButton" parent="Buttonslist" unique_id=524114864]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_0baed")
+texture_pressed = SubResource("AtlasTexture_xqjhc")
+texture_hover = SubResource("AtlasTexture_yt2ge")
+
+[node name="Play" type="TextureButton" parent="Buttonslist" unique_id=2045297368]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_4yak4")
+texture_pressed = SubResource("AtlasTexture_isrmv")
+texture_hover = SubResource("AtlasTexture_jo3xk")
+texture_disabled = SubResource("ImageTexture_ag814")
+
+[node name="Others" type="TextureButton" parent="Buttonslist" unique_id=2017155894]
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_hj22w")
+texture_pressed = SubResource("AtlasTexture_gn8yc")
+texture_hover = SubResource("AtlasTexture_ax2kl")
+
+[node name="Starprojection" type="Sprite2D" parent="." unique_id=2132862180]
+position = Vector2(314, 224)
+texture = ExtResource("3_ux7pi")
+
+[node name="Starprojection2" type="Sprite2D" parent="." unique_id=1496981736]
+position = Vector2(-321, -222)
+texture = ExtResource("3_ux7pi")
+
+[node name="Alicestar" type="Sprite2D" parent="." unique_id=329727206]
+position = Vector2(-224, 131.99997)
+rotation = -0.40976933
+scale = Vector2(1.103017, 1.0881547)
+texture = ExtResource("7_xqjhc")
+
+[connection signal="pressed" from="Buttonslist/Stuff" to="Buttonslist" method="_on_stuff_pressed"]
+[connection signal="pressed" from="Buttonslist/Play" to="Buttonslist" method="_on_play_pressed"]
+[connection signal="pressed" from="Buttonslist/Others" to="Buttonslist" method="_on_others_pressed"]

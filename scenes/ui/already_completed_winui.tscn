@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://dtqr86qubesru"]
+
+[ext_resource type="Script" uid="uid://cpc0hxvgov060" path="res://scripts/uibehaviour/screens/already_completed_winui.gd" id="1_5ufqj"]
+[ext_resource type="Texture2D" uid="uid://dv8ktygkg0etc" path="res://media/sprites/bg/bgstarrynight.png" id="1_upg5r"]
+[ext_resource type="Texture2D" uid="uid://big40wvxijf40" path="res://media/sprites/deco/lvlcomplete.png" id="2_5ufqj"]
+[ext_resource type="Texture2D" uid="uid://cnpb3ath626id" path="res://media/sprites/ui/bt.png" id="4_o7sx7"]
+[ext_resource type="FontFile" uid="uid://bhpk73cexoh7i" path="res://media/overlay/SkippySharpie.ttf" id="5_o7sx7"]
+[ext_resource type="Texture2D" uid="uid://celdw2y2806rx" path="res://media/sprites/marble.png" id="6_lrf61"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_pgrcm"]
+font = ExtResource("5_o7sx7")
+font_size = 20
+
+[node name="Control" type="Control" unique_id=849443941]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_5ufqj")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1895531938]
+position = Vector2(351.00003, 249.99998)
+scale = Vector2(1.2256947, 1.3177083)
+texture = ExtResource("1_upg5r")
+
+[node name="List" type="VBoxContainer" parent="." unique_id=24626642]
+layout_mode = 0
+offset_left = 134.50008
+offset_top = 81.999954
+offset_right = 575.50006
+offset_bottom = 244.99995
+
+[node name="Banner" type="TextureRect" parent="List" unique_id=1111746221]
+layout_mode = 2
+texture = ExtResource("2_5ufqj")
+
+[node name="GoBackToMenu" type="TextureButton" parent="List" unique_id=923265095]
+layout_mode = 2
+texture_normal = ExtResource("4_o7sx7")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="List/GoBackToMenu" unique_id=1859178515]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49500003
+anchor_top = 0.5
+anchor_right = 0.49500003
+anchor_bottom = 0.5
+offset_left = -69.29501
+offset_top = -16.0
+offset_right = 69.70499
+offset_bottom = 7.0
+text = "Play another level"
+label_settings = SubResource("LabelSettings_pgrcm")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Marble" type="Sprite2D" parent="." unique_id=793427899]
+position = Vector2(661.00006, 465.00003)
+rotation = 0.25894004
+scale = Vector2(1.5664632, 1.5743502)
+texture = ExtResource("6_lrf61")
+
+[connection signal="pressed" from="List/GoBackToMenu" to="." method="_on_go_back_to_menu_pressed"]

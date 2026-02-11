@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://mea86qkxypeu"]
+
+[ext_resource type="Script" uid="uid://b4mvews4kmuhx" path="res://scripts/gameplay/audiomanager2.gd" id="1_lie22"]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" unique_id=1441076352]
+pitch_scale = 0.82
+script = ExtResource("1_lie22")

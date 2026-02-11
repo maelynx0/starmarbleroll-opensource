@@ -1,0 +1,535 @@
+[gd_scene format=3 uid="uid://cl36rqksfcm8x"]
+
+[ext_resource type="Texture2D" uid="uid://c26qbgdncnmku" path="res://media/sprites/ui/back_bt.png" id="1_i2hbg"]
+[ext_resource type="Texture2D" uid="uid://dv8ktygkg0etc" path="res://media/sprites/bg/bgstarrynight.png" id="1_py4vt"]
+[ext_resource type="FontFile" uid="uid://bhpk73cexoh7i" path="res://media/overlay/SkippySharpie.ttf" id="1_qbiqn"]
+[ext_resource type="Script" uid="uid://befc4o2sbhmf" path="res://scripts/userdata/levelprogresscheck.gd" id="1_xinor"]
+[ext_resource type="Texture2D" uid="uid://d16h7pvhj3lkw" path="res://media/sprites/ui/uiborders.png" id="2_yr8s7"]
+[ext_resource type="Script" uid="uid://dcy6h855kavp1" path="res://scripts/uibehaviour/backstart_bt.gd" id="3_p2ihm"]
+[ext_resource type="Texture2D" uid="uid://cnpb3ath626id" path="res://media/sprites/ui/bt.png" id="3_py4vt"]
+[ext_resource type="Texture2D" uid="uid://cm4fecr2ijgop" path="res://media/sprites/ui/levelframes.png" id="6_yr8s7"]
+[ext_resource type="Texture2D" uid="uid://doricisjinmfu" path="res://media/sprites/ui/level10frame.png" id="7_yr8s7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mv00w"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_htf71"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yr8s7"]
+texture = ExtResource("3_py4vt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_dp1jl"]
+texture = ExtResource("3_py4vt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_y8uqb"]
+texture = ExtResource("3_py4vt")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8vp7h"]
+texture = ExtResource("3_py4vt")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0ob8p"]
+
+[sub_resource type="Theme" id="Theme_mv00w"]
+default_font_size = 30
+TabContainer/font_sizes/font_size = 55
+TabContainer/fonts/font = ExtResource("1_qbiqn")
+TabContainer/styles/panel = SubResource("StyleBoxEmpty_mv00w")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxEmpty_htf71")
+TabContainer/styles/tab_focus = SubResource("StyleBoxTexture_yr8s7")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxTexture_dp1jl")
+TabContainer/styles/tab_selected = SubResource("StyleBoxTexture_y8uqb")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxTexture_8vp7h")
+TabContainer/styles/tabbar_background = SubResource("StyleBoxEmpty_0ob8p")
+
+[sub_resource type="Theme" id="Theme_py4vt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_py4vt"]
+atlas = ExtResource("6_yr8s7")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htf71"]
+atlas = ExtResource("6_yr8s7")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="LabelSettings" id="LabelSettings_htf71"]
+font = ExtResource("1_qbiqn")
+font_size = 80
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yr8s7"]
+atlas = ExtResource("7_yr8s7")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8vp7h"]
+atlas = ExtResource("7_yr8s7")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xinor"]
+atlas = ExtResource("1_i2hbg")
+region = Rect2(0, 0, 255.0909, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbiqn"]
+atlas = ExtResource("1_i2hbg")
+region = Rect2(255.17358, 0, 256.82642, 256)
+
+[sub_resource type="Animation" id="Animation_yr8s7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-330, 228)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(37.350006, 27.151184)]
+}
+
+[sub_resource type="Animation" id="Animation_htf71"]
+resource_name = "fadein"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.30154657, 0.319199, 0.5432955, 0), Color(0.28627452, 0.14901961, 0.3647059, 0.78431374)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 11.31371),
+"update": 0,
+"values": [Vector2(-330, 228), Vector2(-339.24, -250)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:size")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(37.35, 5), Vector2(37.350006, 27.151184)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dp1jl"]
+_data = {
+&"RESET": SubResource("Animation_yr8s7"),
+&"fadein": SubResource("Animation_htf71")
+}
+
+[node name="Menucontent" type="Control" unique_id=424934946]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="." unique_id=2038814829]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 8.762
+anchor_top = 6.2370005
+anchor_right = 8.762
+anchor_bottom = 6.2370005
+offset_left = -682.48
+offset_top = -481.48
+offset_right = 22.52002
+offset_bottom = 21.519989
+texture = ExtResource("1_py4vt")
+
+[node name="Uiborders" type="Sprite2D" parent="." unique_id=2056883252]
+position = Vector2(-330, -228)
+texture = ExtResource("2_yr8s7")
+centered = false
+
+[node name="Levellist" type="TabContainer" parent="." unique_id=504442929]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = -1.7080001
+anchor_bottom = -1.7080001
+offset_left = -274.0
+offset_top = -88.680016
+offset_right = 762.0
+offset_bottom = 491.32
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.58331835, 0.62669396)
+theme = SubResource("Theme_mv00w")
+theme_override_constants/tab_separation = 45
+tab_alignment = 1
+current_tab = 0
+
+[node name="Summer Night" type="GridContainer" parent="Levellist" unique_id=1750493528]
+custom_minimum_size = Vector2(6.865, 0.5)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_py4vt")
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 9
+columns = 4
+metadata/_tab_index = 0
+
+[node name="0" type="TextureButton" parent="Levellist/Summer Night" unique_id=2145578922]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_py4vt")
+texture_disabled = SubResource("AtlasTexture_htf71")
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/Summer Night/0" unique_id=2121819951]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "1"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="1" type="TextureButton" parent="Levellist/Summer Night" unique_id=1256229615]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_py4vt")
+texture_disabled = SubResource("AtlasTexture_htf71")
+flip_h = true
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/Summer Night/1" unique_id=1952306507]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "2"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="2" type="TextureButton" parent="Levellist/Summer Night" unique_id=1863499659]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_py4vt")
+texture_disabled = SubResource("AtlasTexture_htf71")
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/Summer Night/2" unique_id=768030079]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "3"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="3" type="TextureButton" parent="Levellist/Summer Night" unique_id=645341578]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_py4vt")
+texture_disabled = SubResource("AtlasTexture_htf71")
+flip_h = true
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/Summer Night/3" unique_id=1021494375]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "4"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="4" type="TextureButton" parent="Levellist/Summer Night" unique_id=1324262029]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_py4vt")
+texture_disabled = SubResource("AtlasTexture_htf71")
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/Summer Night/4" unique_id=932541211]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "5"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="5" type="TextureButton" parent="Levellist/Summer Night" unique_id=1076143568]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_py4vt")
+texture_disabled = SubResource("AtlasTexture_htf71")
+flip_h = true
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/Summer Night/5" unique_id=41886308]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "6"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="Bunny Clouds" type="GridContainer" parent="Levellist" unique_id=516105941]
+visible = false
+custom_minimum_size = Vector2(6.865, 0.5)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_py4vt")
+theme_override_constants/h_separation = 8
+theme_override_constants/v_separation = 8
+columns = 4
+metadata/_tab_index = 1
+
+[node name="6" type="TextureButton" parent="Levellist/Bunny Clouds" unique_id=1743239042]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_py4vt")
+texture_disabled = SubResource("AtlasTexture_htf71")
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/Bunny Clouds/6" unique_id=21033402]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "7"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="7" type="TextureButton" parent="Levellist/Bunny Clouds" unique_id=1674374967]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_py4vt")
+texture_disabled = SubResource("AtlasTexture_htf71")
+flip_h = true
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/Bunny Clouds/7" unique_id=1575128426]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "8"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="8" type="TextureButton" parent="Levellist/Bunny Clouds" unique_id=1271235319]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_py4vt")
+texture_disabled = SubResource("AtlasTexture_htf71")
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/Bunny Clouds/8" unique_id=2062165098]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "9"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="The Sun" type="GridContainer" parent="Levellist" unique_id=856254946]
+visible = false
+custom_minimum_size = Vector2(6.865, 0.5)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_py4vt")
+columns = 4
+metadata/_tab_index = 2
+
+[node name="9" type="TextureButton" parent="Levellist/The Sun" unique_id=782345128]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_yr8s7")
+texture_disabled = SubResource("AtlasTexture_8vp7h")
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/The Sun/9" unique_id=414913023]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "10"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="10" type="TextureButton" parent="Levellist/The Sun" unique_id=276288116]
+clip_contents = true
+custom_minimum_size = Vector2(0.5, 0.5)
+layout_mode = 2
+texture_normal = SubResource("AtlasTexture_yr8s7")
+texture_disabled = SubResource("AtlasTexture_8vp7h")
+script = ExtResource("1_xinor")
+
+[node name="txt" type="Label" parent="Levellist/The Sun/10" unique_id=2100936006]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.46400002
+anchor_right = 0.5
+anchor_bottom = 0.46400002
+offset_left = -18.282898
+offset_top = -55.12996
+offset_right = 21.717102
+offset_bottom = 52.87005
+text = "Test"
+label_settings = SubResource("LabelSettings_htf71")
+
+[node name="Exit" type="TextureButton" parent="." unique_id=920350656]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -7.7000003
+anchor_top = -5.1580005
+anchor_right = -7.7000003
+anchor_bottom = -5.1580005
+offset_left = -21.0
+offset_top = -22.679977
+offset_right = 234.0
+offset_bottom = 233.32002
+scale = Vector2(0.2, 0.2)
+texture_normal = SubResource("AtlasTexture_xinor")
+texture_pressed = SubResource("AtlasTexture_qbiqn")
+stretch_mode = 3
+script = ExtResource("3_p2ihm")
+
+[node name="Infotext" type="RichTextLabel" parent="." unique_id=465202956]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -4.0
+anchor_right = 0.5
+anchor_bottom = -4.0
+offset_left = -138.0
+offset_top = -58.0
+offset_right = 139.0
+offset_bottom = -17.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_qbiqn")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[wave] Choose a level! [/wave]"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1776305821]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -8.481
+anchor_top = -6.2500005
+anchor_right = -8.481
+anchor_bottom = -6.2500005
+offset_left = 9.23999
+offset_top = 478.0
+offset_right = 46.589996
+offset_bottom = 505.15118
+scale = Vector2(20, 20)
+color = Color(1, 1, 1, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRect" unique_id=392186744]
+libraries/ = SubResource("AnimationLibrary_dp1jl")

@@ -1,0 +1,116 @@
+[gd_scene format=3 uid="uid://cucre243ilws5"]
+
+[ext_resource type="Texture2D" uid="uid://hmguji0ecuy6" path="res://media/sprites/bg/bgsummernight.png" id="1_ue060"]
+[ext_resource type="Texture2D" uid="uid://bmf1e2s652gd8" path="res://media/sprites/tracks/level1-3.png" id="2_bbvxl"]
+[ext_resource type="Script" uid="uid://cved0cfhn5vwc" path="res://scripts/gameplay/spawnpoint.gd" id="2_j08sa"]
+[ext_resource type="Texture2D" uid="uid://c05brfrhpljtc" path="res://media/sprites/deco/crayostar2.png" id="3_lha2r"]
+[ext_resource type="Script" uid="uid://bv6gi3otephgr" path="res://scripts/gameplay/respawnzone.gd" id="3_x4si1"]
+[ext_resource type="PackedScene" uid="uid://kjwldfb4v1vn" path="res://scenes/gameplay/marble.tscn" id="4_68ib6"]
+[ext_resource type="Texture2D" uid="uid://cknu5sbq0n1r" path="res://media/sprites/deco/crayostar1.png" id="8_brv20"]
+[ext_resource type="Script" uid="uid://cps3ggbcewgk4" path="res://scripts/gameplay/complete_collision.gd" id="9_7d7pp"]
+[ext_resource type="Texture2D" uid="uid://bcifduh10nqll" path="res://media/sprites/deco/cloud.png" id="10_oswwn"]
+[ext_resource type="PackedScene" uid="uid://jmrvfk0mxnhr" path="res://scenes/gameplay/levelinterface.tscn" id="10_ue060"]
+[ext_resource type="Texture2D" uid="uid://b72nb5g05xhc6" path="res://media/sprites/finale.png" id="11_oswwn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_brv20"]
+atlas = ExtResource("2_bbvxl")
+region = Rect2(1.6098785, 0, 510.7602, 186.88762)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c2uwi"]
+radius = 32.449898
+
+[node name="level0" type="Node2D" unique_id=1327211222]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=630059665]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=71354383]
+scale = Vector2(1.4231325, 1.4199703)
+motion_scale = Vector2(0, 0)
+
+[node name="BG" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=1266276726]
+position = Vector2(350.5, 251)
+scale = Vector2(1.2239585, 1.3177083)
+texture = ExtResource("1_ue060")
+
+[node name="Track" type="Sprite2D" parent="." unique_id=16414888]
+position = Vector2(650.3794, 430.3626)
+scale = Vector2(2.4887085, 2.834811)
+texture = SubResource("AtlasTexture_brv20")
+
+[node name="RespawnCollision" type="Area2D" parent="." unique_id=2050990407]
+position = Vector2(443, 236)
+collision_layer = 0
+input_pickable = false
+monitorable = false
+script = ExtResource("3_x4si1")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RespawnCollision" unique_id=433406009]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(69, -49)
+scale = Vector2(1.2976054, 1.6038737)
+polygon = PackedVector2Array(759, -225, 765, 341, 626, 340, 633, 231, 585, 167, 530, 162, 422, 59, 367.6002, 33.668488, 299.783, 24.316132, 212, 21, 134.09317, 54.243668, 54.716187, 159.61357, -74, 30, -126, 1, -278, -4, -331, -34, -390.71973, 9.975845, -407.674, 108.48735, -427, -227, -47.777954, -226.3605, 125.34369, -226.06857, 222.77936, -225.90427)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RespawnCollision" unique_id=1885201970]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(112, 396)
+rotation = 3.1415927
+scale = Vector2(1.2400006, 1)
+polygon = PackedVector2Array(461.29007, -213.00006, 449.19333, 364.99994, 431.4514, 259.99994, 395.96753, 240.99994, 341.9353, 247.99994, 306.45148, 310.99997, 214.51604, 320.99997, 151.61282, 298.99997, 52.41931, 143.99997, -14.516113, 33, -85.48389, 34, -122, 151, -174.99988, 246, -235.4837, 277, -324.99982, 242.00003, -392.74176, 185.00003, -400.80627, 56.00006, -434.67725, -3.999939, -548.38684, 6.000061, -639.51575, 169.00006, -643.00006, -217.99994)
+
+[node name="CompleteCollision" type="Area2D" parent="." unique_id=1440880651]
+position = Vector2(1117, 69)
+scale = Vector2(1.2204862, 1.3072916)
+script = ExtResource("9_7d7pp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CompleteCollision" unique_id=712954012]
+position = Vector2(36.870552, 376.35062)
+rotation = 1.0631679
+shape = SubResource("CircleShape2D_c2uwi")
+
+[node name="Spawnpoint" type="Marker2D" parent="." unique_id=305040374]
+position = Vector2(96, 255)
+script = ExtResource("2_j08sa")
+
+[node name="Marble" parent="." unique_id=1175103510 instance=ExtResource("4_68ib6")]
+
+[node name="Deco0" type="Sprite2D" parent="." unique_id=2122926286]
+position = Vector2(671, 176.99998)
+rotation = 0.2276538
+scale = Vector2(0.76171887, 0.58203125)
+texture = ExtResource("3_lha2r")
+
+[node name="Deco1" type="Sprite2D" parent="." unique_id=1683132447]
+position = Vector2(264, 563)
+texture = ExtResource("8_brv20")
+
+[node name="Cloud" type="Sprite2D" parent="." unique_id=58213125]
+position = Vector2(11, 137)
+scale = Vector2(1.53125, 1.296875)
+texture = ExtResource("10_oswwn")
+
+[node name="Cloud2" type="Sprite2D" parent="." unique_id=1728438332]
+position = Vector2(700, 732)
+scale = Vector2(1.53125, 1.296875)
+texture = ExtResource("10_oswwn")
+
+[node name="Cloud3" type="Sprite2D" parent="." unique_id=1190836164]
+position = Vector2(1116, 271.0001)
+scale = Vector2(1.53125, 1.296875)
+texture = ExtResource("10_oswwn")
+
+[node name="Finale" type="Sprite2D" parent="." unique_id=568933906]
+position = Vector2(1144, 511)
+scale = Vector2(0.5781248, 0.5546874)
+texture = ExtResource("11_oswwn")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1675279335]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="Levelinterface" parent="CanvasLayer" unique_id=2103315192 instance=ExtResource("10_ue060")]
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="RespawnCollision" to="RespawnCollision" method="_on_marble_entered"]
+[connection signal="body_entered" from="CompleteCollision" to="CompleteCollision" method="_on_marble_alive_entered"]

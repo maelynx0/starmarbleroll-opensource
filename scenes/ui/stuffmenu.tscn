@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://djts3sass0q07"]
+
+[ext_resource type="FontFile" uid="uid://bhpk73cexoh7i" path="res://media/overlay/SkippySharpie.ttf" id="1_7ykhp"]
+[ext_resource type="Texture2D" uid="uid://dv8ktygkg0etc" path="res://media/sprites/bg/bgstarrynight.png" id="1_8n17k"]
+[ext_resource type="Texture2D" uid="uid://lgpln8nb13wg" path="res://media/sprites/ui/notebg.png" id="2_hw5ui"]
+[ext_resource type="FontFile" uid="uid://di8c55ujnrh5" path="res://media/overlay/DroidSans.ttf" id="3_hw5ui"]
+[ext_resource type="Script" uid="uid://csc0fvefcgbig" path="res://scripts/uibehaviour/comp_lvls.gd" id="4_a7y4r"]
+[ext_resource type="Script" uid="uid://dcy6h855kavp1" path="res://scripts/uibehaviour/backstart_bt.gd" id="6_a7y4r"]
+[ext_resource type="Texture2D" uid="uid://c26qbgdncnmku" path="res://media/sprites/ui/back_bt.png" id="6_vtne4"]
+[ext_resource type="Texture2D" uid="uid://celdw2y2806rx" path="res://media/sprites/marble.png" id="10_vtne4"]
+
+[sub_resource type="GDScript" id="GDScript_jj01p"]
+script/source = "extends HBoxContainer
+
+func _on_ez_trophies_pressed() -> void:
+	OS.shell_open(\"https://ezcha.net/games/starmarbleroll/trophies\")
+"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_14hub"]
+atlas = ExtResource("6_vtne4")
+region = Rect2(0, 0, 255.0909, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bcwkb"]
+atlas = ExtResource("6_vtne4")
+region = Rect2(255.17358, 0, 256.82642, 256)
+
+[node name="Control" type="Control" unique_id=1562432660]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="." unique_id=434850270]
+layout_mode = 0
+offset_left = -331.0
+offset_top = -231.0
+offset_right = 371.0
+offset_bottom = 273.0
+texture = ExtResource("1_8n17k")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=198394704]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -39.5
+offset_top = -20.0
+offset_right = 39.5
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 79
+script = SubResource("GDScript_jj01p")
+
+[node name="Statsbg" type="TextureRect" parent="HBoxContainer" unique_id=368087525]
+layout_mode = 2
+texture = ExtResource("2_hw5ui")
+
+[node name="CompLvls" type="Label" parent="HBoxContainer/Statsbg" unique_id=736998819]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.298
+anchor_right = 0.5
+anchor_bottom = 0.298
+offset_left = -96.5
+offset_top = -11.502007
+offset_right = 44.5
+offset_bottom = 11.497993
+theme_override_colors/font_color = Color(0.9779369, 0.97793704, 0.9779369, 1)
+theme_override_colors/font_outline_color = Color(0.63744605, 0.5956436, 0.23783222, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_hw5ui")
+theme_override_font_sizes/font_size = 18
+text = "Levels Completed:"
+script = ExtResource("4_a7y4r")
+
+[node name="TimesRpwn" type="Label" parent="HBoxContainer/Statsbg" unique_id=827548701]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.43600002
+anchor_right = 0.5
+anchor_bottom = 0.43600002
+offset_left = -96.5
+offset_top = -11.664001
+offset_right = 54.5
+offset_bottom = 11.335999
+theme_override_colors/font_color = Color(0.9779369, 0.97793704, 0.9779369, 1)
+theme_override_colors/font_outline_color = Color(0.63744605, 0.5956436, 0.23783222, 1)
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("3_hw5ui")
+theme_override_font_sizes/font_size = 18
+text = "Times Respawned:"
+script = ExtResource("4_a7y4r")
+
+[node name="Infotext" type="RichTextLabel" parent="." unique_id=529884357]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = -4.0
+anchor_right = 0.5
+anchor_bottom = -4.0
+offset_left = -126.0
+offset_top = -33.0
+offset_right = 151.0
+offset_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("1_7ykhp")
+theme_override_font_sizes/normal_font_size = 25
+bbcode_enabled = true
+text = "[wave]All your stats and collected stuff![/wave]"
+fit_content = true
+horizontal_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="." unique_id=2095153759]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -7.7000003
+anchor_top = -5.1580005
+anchor_right = -7.7000003
+anchor_bottom = -5.1580005
+offset_left = -21.0
+offset_top = -22.679977
+offset_right = 234.0
+offset_bottom = 233.32002
+scale = Vector2(0.2, 0.2)
+texture_normal = SubResource("AtlasTexture_14hub")
+texture_pressed = SubResource("AtlasTexture_bcwkb")
+stretch_mode = 3
+script = ExtResource("6_a7y4r")
+
+[node name="Marble" type="Sprite2D" parent="." unique_id=549741309]
+position = Vector2(328, -189.99998)
+rotation = -0.7273019
+texture = ExtResource("10_vtne4")

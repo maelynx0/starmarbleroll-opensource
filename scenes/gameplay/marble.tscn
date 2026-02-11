@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://kjwldfb4v1vn"]
+
+[ext_resource type="Script" uid="uid://g1sikkm1ost" path="res://scripts/marble/marble.gd" id="1_ynrcs"]
+[ext_resource type="Texture2D" uid="uid://celdw2y2806rx" path="res://media/sprites/marble.png" id="2_ynrcs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c16uf"]
+radius = 19.026299
+
+[node name="Marble" type="RigidBody2D" unique_id=778398073]
+collision_mask = 0
+mass = 0.05
+gravity_scale = 0.0
+script = ExtResource("1_ynrcs")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1849683250]
+shape = SubResource("CircleShape2D_c16uf")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=919277431]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_ynrcs")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1761921151]
+zoom = Vector2(0.7, 0.7)
+position_smoothing_enabled = true
+position_smoothing_speed = 3.0
+drag_horizontal_enabled = true

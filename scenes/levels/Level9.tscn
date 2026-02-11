@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://drnppokadpb1y"]
+
+[ext_resource type="Texture2D" uid="uid://co6bphxwbw7gh" path="res://media/sprites/bg/bgthesun.png" id="1_rc2qw"]
+[ext_resource type="Texture2D" uid="uid://drrdk8p34wanc" path="res://media/sprites/tracks/level10.png" id="2_c38s4"]
+[ext_resource type="Script" uid="uid://bv6gi3otephgr" path="res://scripts/gameplay/respawnzone.gd" id="3_c38s4"]
+[ext_resource type="Texture2D" uid="uid://bj4gucs0vvsc1" path="res://media/sprites/tracks/sunstarpath.png" id="3_gf1kr"]
+[ext_resource type="Script" uid="uid://cps3ggbcewgk4" path="res://scripts/gameplay/complete_collision.gd" id="4_gf1kr"]
+[ext_resource type="Script" uid="uid://cved0cfhn5vwc" path="res://scripts/gameplay/spawnpoint.gd" id="5_sxwyp"]
+[ext_resource type="PackedScene" uid="uid://h5p3ki2kjoha" path="res://scenes/gameplay/super_marble.tscn" id="7_c38s4"]
+[ext_resource type="PackedScene" uid="uid://jmrvfk0mxnhr" path="res://scenes/gameplay/levelinterface.tscn" id="7_ldyqp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gf1kr"]
+atlas = ExtResource("2_c38s4")
+region = Rect2(0, 303.4485, 432.5, 208.55151)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hgn0l"]
+region = Rect2(1.6098785, 0, 88.39011, 166.54544)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c38s4"]
+atlas = ExtResource("2_c38s4")
+region = Rect2(0, 133.60284, 512, 169.83527)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sxwyp"]
+atlas = ExtResource("2_c38s4")
+region = Rect2(2.7106018, 0, 471.44025, 105.92955)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_we1q4"]
+atlas = ExtResource("3_gf1kr")
+region = Rect2(266.24863, 8.566956, 234.25604, 257.6816)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ldyqp"]
+atlas = ExtResource("3_gf1kr")
+region = Rect2(0, 0, 191.5795, 269.90875)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_od40k"]
+atlas = ExtResource("3_gf1kr")
+region = Rect2(64.20282, 274.30106, 366.025, 237.69894)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfem0"]
+size = Vector2(743.9668, 38.24707)
+
+[node name="level9" type="Node2D" unique_id=935506798]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=1985378783]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=1044720484]
+scale = Vector2(1.4231325, 1.4199703)
+motion_scale = Vector2(0, 0)
+
+[node name="BG" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=606717579]
+position = Vector2(350.5, 251)
+scale = Vector2(1.2239585, 1.3177083)
+texture = ExtResource("1_rc2qw")
+
+[node name="Track" type="Sprite2D" parent="." unique_id=1694400617]
+position = Vector2(772.3661, 330.57617)
+scale = Vector2(3.1325643, 3.2074628)
+texture = SubResource("AtlasTexture_gf1kr")
+
+[node name="Track2" type="Sprite2D" parent="." unique_id=378670801]
+position = Vector2(142, 240)
+scale = Vector2(2.556818, 2.45839)
+texture = SubResource("AtlasTexture_hgn0l")
+
+[node name="Track3" type="Sprite2D" parent="." unique_id=770748486]
+position = Vector2(2977, 644)
+scale = Vector2(3.2049546, 3.2901216)
+texture = SubResource("AtlasTexture_c38s4")
+
+[node name="Track4" type="Sprite2D" parent="." unique_id=657469569]
+position = Vector2(5034, -450)
+scale = Vector2(3.2754114, 3.9751601)
+texture = SubResource("AtlasTexture_sxwyp")
+
+[node name="Track6" type="Sprite2D" parent="." unique_id=203178548]
+position = Vector2(4017, 31)
+scale = Vector2(3.5769787, 3.681553)
+texture = SubResource("AtlasTexture_we1q4")
+
+[node name="Track7" type="Sprite2D" parent="." unique_id=1962252561]
+position = Vector2(1790, 418)
+scale = Vector2(3.5769787, 3.681553)
+texture = SubResource("AtlasTexture_ldyqp")
+
+[node name="Track8" type="Sprite2D" parent="." unique_id=70303646]
+position = Vector2(5849, -1117.0001)
+rotation = -0.47203344
+scale = Vector2(3.5769787, 3.681553)
+texture = SubResource("AtlasTexture_ldyqp")
+flip_h = true
+
+[node name="Track9" type="Sprite2D" parent="." unique_id=1656180968]
+position = Vector2(5931, -2026)
+scale = Vector2(3.5769787, 3.681553)
+texture = SubResource("AtlasTexture_od40k")
+
+[node name="RespawnCollision" type="Area2D" parent="." unique_id=1230036769]
+position = Vector2(443, 236)
+collision_layer = 0
+input_pickable = false
+monitorable = false
+script = ExtResource("3_c38s4")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RespawnCollision" unique_id=431958728]
+polygon = PackedVector2Array(-355, 417, -319, 457, -235, 455, -219, 430, 354, 427, 370, 370, 524, -78, 588, 7, 635, 7, 755, -155, 950, -162, 965, -23, 1079, 104, 1257, 344, 1332, 535, 1482, 649, 1689, 736, 1964, 712, 1996, 675, 2048, 578, 2117, 615, 2285, 694, 2502, 697, 2783, 647, 2926, 548, 3138, 358, 3428, 277, 3557, 232, 3720, 7, 3870, -201, 4024, -396, 4082, -522, 4123, -597, 4330, -670, 4553, -593, 4620, -589, 4949, -634, 5040, -622, 5112, -624, 5281, -721, 5401, -788, 5559, -919, 5614, -1037, 5636, -1821, 5835, -2008, 5848, -2282, 5812, -2499, 5812, -2689, 6113, -2683, 6105, 990, -580, 1001)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RespawnCollision" unique_id=597185514]
+polygon = PackedVector2Array(-352, 408, -326, 303, -251, 296, -220, 316, 252, 312, 439, -305, 526, -288, 612, -169, 716, -315, 989, -301, 1118, -290, 1306, -233, 1434, -120, 1500, 40, 1555, 172, 1644, 254, 1713, 402, 1759, 503, 1849, 556, 1907, 510, 1946, 391, 2015, 350, 2149, 362, 2214, 442, 2383, 495, 2557, 495, 2724, 440, 2873, 327, 2969, 196, 3026, 64, 3123, -10, 3317, -167, 3473, -414, 3529, -572, 3599, -677, 3657, -757, 3728, -826, 3909, -845, 4069, -854, 4150, -812, 4279, -887, 4403, -880, 4551, -842, 4683, -891, 4836, -944, 5020, -919, 5141.0234, -1036.3334, 5199, -1443, 5229, -1793, 5059, -1945, 5066, -2348, 5118, -2418, 5115, -2708, -328, -2806, -384, 530)
+
+[node name="CompleteCollision" type="Area2D" parent="." unique_id=1111801074]
+position = Vector2(1117, 69)
+scale = Vector2(1.2204862, 1.3072916)
+script = ExtResource("4_gf1kr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CompleteCollision" unique_id=405555467]
+position = Vector2(3932.8591, -1846.5658)
+shape = SubResource("RectangleShape2D_jfem0")
+
+[node name="Spawnpoint" type="Marker2D" parent="." unique_id=1611800403]
+position = Vector2(153, 603)
+script = ExtResource("5_sxwyp")
+
+[node name="Marble" parent="." unique_id=778398073 instance=ExtResource("7_c38s4")]
+position = Vector2(-46, 724)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1317797140]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="Levelinterface" parent="CanvasLayer" unique_id=1191962134 instance=ExtResource("7_ldyqp")]
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="RespawnCollision" to="RespawnCollision" method="_on_marble_entered"]
+[connection signal="body_entered" from="CompleteCollision" to="CompleteCollision" method="_on_marble_alive_entered"]

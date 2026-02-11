@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://jmrvfk0mxnhr"]
+
+[ext_resource type="PackedScene" uid="uid://bpvmots6eeukn" path="res://scenes/ui/pausemenu.tscn" id="1_7x7e5"]
+
+[node name="Levelinterface" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Pausemenu" parent="." instance=ExtResource("1_7x7e5")]
+visible = false
+layout_mode = 0

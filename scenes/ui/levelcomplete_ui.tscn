@@ -1,0 +1,79 @@
+[gd_scene format=3 uid="uid://cpjvoitx6mgwf"]
+
+[ext_resource type="FontFile" uid="uid://bhpk73cexoh7i" path="res://media/overlay/SkippySharpie.ttf" id="1_eu5hn"]
+[ext_resource type="Texture2D" uid="uid://big40wvxijf40" path="res://media/sprites/ui/lvlcomplete.png" id="1_led4k"]
+[ext_resource type="Script" uid="uid://cin4rm235dtrx" path="res://scripts/uibehaviour/levelcomplete_ui.gd" id="1_rlpw3"]
+[ext_resource type="Texture2D" uid="uid://cnpb3ath626id" path="res://media/sprites/ui/bt.png" id="2_hnv4r"]
+[ext_resource type="Texture2D" uid="uid://b3dfqa41ty4gf" path="res://media/sprites/bg/bgpastelnight.png" id="2_skb7r"]
+[ext_resource type="Texture2D" uid="uid://b0vm0y2xnf3pf" path="res://media/sprites/deco/alice_win.png" id="7_skb7r"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rlpw3"]
+font = ExtResource("1_eu5hn")
+font_size = 20
+
+[node name="Levelcomplete" type="Control" unique_id=1912104745]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 134.0
+offset_right = 174.0
+offset_bottom = 40.0
+script = ExtResource("1_rlpw3")
+
+[node name="BG" type="Sprite2D" parent="." unique_id=1693422446]
+position = Vector2(216.99998, 250.00003)
+scale = Vector2(1.2278881, 1.3177083)
+texture = ExtResource("2_skb7r")
+
+[node name="List" type="VBoxContainer" parent="." unique_id=120049470]
+layout_mode = 0
+offset_top = 82.0
+offset_right = 441.0
+offset_bottom = 245.0
+theme_override_constants/separation = 9
+
+[node name="Banner" type="TextureRect" parent="List" unique_id=783319898]
+layout_mode = 2
+texture = ExtResource("1_led4k")
+
+[node name="CompletionTime" type="RichTextLabel" parent="List" unique_id=1288108461]
+clip_contents = false
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_eu5hn")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[tornado]Unlocked a new level! [/tornado]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+tab_size = 9
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GoBackToMenu" type="TextureButton" parent="List" unique_id=789818221]
+layout_mode = 2
+texture_normal = ExtResource("2_hnv4r")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="List/GoBackToMenu" unique_id=336139501]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.49500003
+anchor_top = 0.5
+anchor_right = 0.49500003
+anchor_bottom = 0.5
+offset_left = -69.29501
+offset_top = -16.0
+offset_right = 69.70499
+offset_bottom = 7.0
+text = "Play another level"
+label_settings = SubResource("LabelSettings_rlpw3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AliceWin" type="Sprite2D" parent="." unique_id=291979495]
+position = Vector2(21, 321.00003)
+rotation = -0.1055606
+scale = Vector2(0.4310322, 0.47303298)
+texture = ExtResource("7_skb7r")
+
+[connection signal="pressed" from="List/GoBackToMenu" to="." method="_on_go_back_to_menu_pressed"]

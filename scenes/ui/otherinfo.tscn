@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://dq40d1p5vcr0x"]
+
+[ext_resource type="Texture2D" uid="uid://dv8ktygkg0etc" path="res://media/sprites/bg/bgstarrynight.png" id="1_ar4a1"]
+[ext_resource type="FontFile" uid="uid://bhpk73cexoh7i" path="res://media/overlay/SkippySharpie.ttf" id="1_rdg20"]
+[ext_resource type="Texture2D" uid="uid://c26qbgdncnmku" path="res://media/sprites/ui/back_bt.png" id="3_5v6a8"]
+[ext_resource type="Script" uid="uid://dcy6h855kavp1" path="res://scripts/uibehaviour/backstart_bt.gd" id="4_a1nes"]
+[ext_resource type="Texture2D" uid="uid://c55mr42ex0j6i" path="res://media/sprites/deco/instructions.png" id="5_5v6a8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_t3nqj"]
+font = ExtResource("1_rdg20")
+font_size = 30
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_70v4u"]
+atlas = ExtResource("3_5v6a8")
+region = Rect2(0, 0, 255.0909, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5gd5e"]
+atlas = ExtResource("3_5v6a8")
+region = Rect2(255.17358, 0, 256.82642, 256)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5v6a8"]
+font_size = 12
+
+[node name="Control" type="Control" unique_id=1525752496]
+layout_mode = 3
+anchor_left = 0.52900004
+anchor_top = 0.46
+anchor_right = 0.52900004
+anchor_bottom = 0.46
+offset_left = -40.30002
+offset_right = -0.3000183
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="TextureRect" parent="." unique_id=2103375999]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -371.99997
+offset_top = -232.0
+offset_right = 333.0
+offset_bottom = 271.0
+texture = ExtResource("1_ar4a1")
+
+[node name="Creditscont" type="VBoxContainer" parent="." unique_id=1068891670]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.77500004
+anchor_top = 1.087
+anchor_right = 0.77500004
+anchor_bottom = 1.087
+offset_left = -115.0
+offset_top = -21.48
+offset_right = 116.0
+offset_bottom = 152.52
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Creditstop" type="RichTextLabel" parent="Creditscont" unique_id=2025728025]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/normal_font = ExtResource("1_rdg20")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "[wave] Credits [/wave]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Txt" type="Label" parent="Creditscont" unique_id=1333342489]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Music by Koopa
+Game by maelynx0
+Made with Godot Engine"
+label_settings = SubResource("LabelSettings_t3nqj")
+horizontal_alignment = 1
+
+[node name="Exit" type="TextureButton" parent="." unique_id=1668826501]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -7.7000003
+anchor_top = -5.1580005
+anchor_right = -7.7000003
+anchor_bottom = -5.1580005
+offset_left = -21.0
+offset_top = -22.679977
+offset_right = 234.0
+offset_bottom = 233.32002
+scale = Vector2(0.2, 0.2)
+texture_normal = SubResource("AtlasTexture_70v4u")
+texture_pressed = SubResource("AtlasTexture_5gd5e")
+stretch_mode = 3
+script = ExtResource("4_a1nes")
+
+[node name="iconsdeco" type="TextureRect" parent="." unique_id=1423862187]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = -1.075
+anchor_right = 1.0
+anchor_bottom = -1.075
+offset_left = -130.0
+offset_top = -128.0
+offset_right = 126.0
+grow_horizontal = 0
+texture = ExtResource("5_5v6a8")
+
+[node name="Loadingtxt2" type="Label" parent="iconsdeco" unique_id=1116293220]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.105
+anchor_right = 0.5
+anchor_bottom = 1.105
+offset_left = -128.0
+offset_top = -11.440002
+offset_right = 123.0
+offset_bottom = 11.559998
+text = "Press Z, Click or Spacebar to roll!"
+label_settings = SubResource("LabelSettings_5v6a8")
+horizontal_alignment = 1

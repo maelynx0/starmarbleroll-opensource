@@ -1,0 +1,157 @@
+[gd_scene format=3 uid="uid://dal7nitnu0hpk"]
+
+[ext_resource type="Texture2D" uid="uid://d0tg8ncklja54" path="res://media/sprites/bg/bgovercast.png" id="1_s07gc"]
+[ext_resource type="Script" uid="uid://bv6gi3otephgr" path="res://scripts/gameplay/respawnzone.gd" id="2_kbpm3"]
+[ext_resource type="Texture2D" uid="uid://crpabf7th2rii" path="res://media/sprites/tracks/levels7-8.png" id="2_onqt8"]
+[ext_resource type="Script" uid="uid://cps3ggbcewgk4" path="res://scripts/gameplay/complete_collision.gd" id="3_onqt8"]
+[ext_resource type="Script" uid="uid://cved0cfhn5vwc" path="res://scripts/gameplay/spawnpoint.gd" id="4_xxriy"]
+[ext_resource type="PackedScene" uid="uid://kjwldfb4v1vn" path="res://scenes/gameplay/marble.tscn" id="5_ocn3w"]
+[ext_resource type="PackedScene" uid="uid://jmrvfk0mxnhr" path="res://scenes/gameplay/levelinterface.tscn" id="6_kj8k3"]
+[ext_resource type="Texture2D" uid="uid://dqw34sin2qwkf" path="res://media/sprites/deco/starspiral.png" id="8_kj8k3"]
+[ext_resource type="Texture2D" uid="uid://cjfq1fqx7jnht" path="res://media/sprites/deco/starbell.png" id="9_kjheb"]
+[ext_resource type="Texture2D" uid="uid://cllv74ww7ndbq" path="res://media/sprites/deco/twinklewindow.png" id="10_dsv7y"]
+[ext_resource type="Texture2D" uid="uid://b72nb5g05xhc6" path="res://media/sprites/finale.png" id="11_kjheb"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxriy"]
+atlas = ExtResource("2_onqt8")
+region = Rect2(0, 292.59662, 512, 191.32861)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dsv7y"]
+radius = 32.449898
+
+[node name="level7" type="Node2D" unique_id=1754491691]
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="." unique_id=74608697]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground" unique_id=18030116]
+scale = Vector2(1.4231325, 1.4199703)
+motion_scale = Vector2(0, 0)
+
+[node name="BG" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer" unique_id=541687556]
+position = Vector2(350.5, 251)
+scale = Vector2(1.2239585, 1.3177083)
+texture = ExtResource("1_s07gc")
+
+[node name="Track" type="Sprite2D" parent="." unique_id=200813618]
+position = Vector2(1216.1136, 203.19403)
+scale = Vector2(4.5347123, 4.6093616)
+texture = SubResource("AtlasTexture_xxriy")
+
+[node name="RespawnCollision" type="Area2D" parent="." unique_id=618192698]
+position = Vector2(443, 236)
+collision_layer = 0
+input_pickable = false
+monitorable = false
+script = ExtResource("2_kbpm3")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="RespawnCollision" unique_id=1355659310]
+polygon = PackedVector2Array(-309, 34, -244, 31, -180, 57, -154, 131, -134, 164, -17, 234, 61, 233, 101, 216, 115, 131, 171, 89, 296, 60, 314, 41, 261.80292, 8.572937, 138, 9, -60, -60, -103, -144, -85, -228, -45, -274, 57, -315, 376, -268, 436, -318, 558, -459, 663, -489, 871, -437, 905, -386, 917, -278, 856, -199, 794, -101, 737, 46, 756, 122, 809, 127, 892, 109, 996, 124, 1082, 228, 1186, 302, 1299, 293, 1411, 279, 1516, 202, 1607, 137, 1677, 137, 1726, 74, 1772, -14, 1771, -145, 1760, -242, 1723, -278, 1574, -267, 1471, -289, 1329, -319, 1248, -356, 1195, -370, 1195, -318, 1205, -248, 1211, -154, 1146, -35, 1157, 19, 1234, 24, 1307, 11, 1360, -28, 1384, -70, 1411, -191, 1545, -240, 1658, -176, 1652, -78, 1643, 25, 1502, 58, 1434, 142, 1273, 185, 1137, 172, 1050, 137, 993, 52, 1004, -44, 1072, -179, 1044, -292, 1035, -394, 1063, -455, 1039, -547, -283, -481)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="RespawnCollision" unique_id=772900679]
+polygon = PackedVector2Array(-302, 27, -358, 141, -348, 217, -221, 211, -124, 308, 91, 355, 154, 362, 219, 325, 230, 258, 231, 217, 393, 137, 445, 61, 437, 6, 387, -77, 75, -136, 30, -166, 69, -199, 154, -182, 349, -141, 445, -138, 539, -222, 628, -335, 687, -356, 736, -327, 761, -289, 656, -101, 603, 53, 641, 178, 691, 247, 821, 247, 909, 266, 1031, 365, 1109, 410, 1304, 418, 1492, 414, 1572, 367, 1630, 320, 1797, 266, 1866, 191, 1889, 66, 1895, -21, 1916, -72, 1918, -161, 1898, -359, 1852, -398, 1764, -418, 1633, -418, 1513, -415, 1330, -461, 1156, -486, 1057, -458, 1039, -555, 1975, -481, 1964, 629, -558, 652, -490, 32)
+
+[node name="CompleteCollision" type="Area2D" parent="." unique_id=2067289355]
+position = Vector2(1117, 69)
+scale = Vector2(1.2204862, 1.3072916)
+script = ExtResource("3_onqt8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CompleteCollision" unique_id=615232329]
+position = Vector2(698.0824, 78.023926)
+rotation = 1.0631679
+shape = SubResource("CircleShape2D_dsv7y")
+
+[node name="Spawnpoint" type="Marker2D" parent="." unique_id=1864574491]
+position = Vector2(179, 369)
+script = ExtResource("4_xxriy")
+
+[node name="Marble" parent="." unique_id=778398073 instance=ExtResource("5_ocn3w")]
+
+[node name="Starspiral" type="Sprite2D" parent="." unique_id=1880174847]
+position = Vector2(890, 80)
+scale = Vector2(1.46875, 1.453125)
+texture = ExtResource("8_kj8k3")
+
+[node name="Starspiral3" type="Sprite2D" parent="." unique_id=563225199]
+position = Vector2(75.00001, 99)
+rotation = -0.63964075
+scale = Vector2(1.46875, 1.453125)
+texture = ExtResource("8_kj8k3")
+
+[node name="Starspiral4" type="Sprite2D" parent="." unique_id=658547317]
+position = Vector2(400.99997, 638)
+rotation = 1.2452105
+scale = Vector2(1.46875, 1.453125)
+texture = ExtResource("8_kj8k3")
+
+[node name="Starspiral5" type="Sprite2D" parent="." unique_id=1062796038]
+position = Vector2(2088.0002, -245.00002)
+rotation = 1.2452105
+scale = Vector2(1.46875, 1.453125)
+texture = ExtResource("8_kj8k3")
+
+[node name="Starspiral6" type="Sprite2D" parent="." unique_id=1618902965]
+position = Vector2(637.00024, -185)
+rotation = 1.2452105
+scale = Vector2(1.46875, 1.453125)
+texture = ExtResource("8_kj8k3")
+
+[node name="Starspiral7" type="Sprite2D" parent="." unique_id=936169243]
+position = Vector2(965, 524.99994)
+rotation = -0.060813837
+scale = Vector2(1.46875, 1.453125)
+texture = ExtResource("8_kj8k3")
+
+[node name="Starspiral8" type="Sprite2D" parent="." unique_id=1454621070]
+position = Vector2(2002, 794.99994)
+rotation = 0.849313
+scale = Vector2(1.46875, 1.453125)
+texture = ExtResource("8_kj8k3")
+
+[node name="Starspiral9" type="Sprite2D" parent="." unique_id=1278805579]
+position = Vector2(2435, 448.00003)
+rotation = 0.849313
+scale = Vector2(1.46875, 1.453125)
+texture = ExtResource("8_kj8k3")
+
+[node name="Starbell" type="Sprite2D" parent="." unique_id=1844004073]
+position = Vector2(1635.0001, 68)
+rotation = -0.8590025
+scale = Vector2(1.390625, 1.3671875)
+texture = ExtResource("9_kjheb")
+
+[node name="Starbell2" type="Sprite2D" parent="." unique_id=1602317660]
+position = Vector2(678, 596)
+rotation = -0.63929915
+scale = Vector2(1.390625, 1.3671875)
+texture = ExtResource("9_kjheb")
+
+[node name="Starbell3" type="Sprite2D" parent="." unique_id=2144823568]
+position = Vector2(1591.0001, 693.00006)
+rotation = 0.34072697
+scale = Vector2(1.390625, 1.3671875)
+texture = ExtResource("9_kjheb")
+
+[node name="Starspiral2" type="Sprite2D" parent="." unique_id=1845257648]
+position = Vector2(1362.0001, 484.00003)
+rotation = -1.1790259
+scale = Vector2(1.296875, 1.2421875)
+texture = ExtResource("8_kj8k3")
+
+[node name="Twinklewindow" type="Sprite2D" parent="." unique_id=253828796]
+position = Vector2(1504, -312)
+scale = Vector2(1.9991981, 1.9872891)
+texture = ExtResource("10_dsv7y")
+
+[node name="Finale" type="Sprite2D" parent="." unique_id=341523021]
+position = Vector2(1924, 54)
+texture = ExtResource("11_kjheb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1528501149]
+layer = 0
+follow_viewport_enabled = true
+
+[node name="Levelinterface" parent="CanvasLayer" unique_id=862177108 instance=ExtResource("6_kj8k3")]
+metadata/_edit_use_anchors_ = true
+
+[connection signal="body_entered" from="RespawnCollision" to="RespawnCollision" method="_on_marble_entered"]
+[connection signal="body_entered" from="CompleteCollision" to="CompleteCollision" method="_on_marble_alive_entered"]
